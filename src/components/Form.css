@@ -1,0 +1,40 @@
+.form{
+    width: 100%;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+input{
+    height: 60px;
+    width: 100%;
+    min-width: 200px;
+    border-radius: 5px;
+	border: none;
+    outline: none;
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.addBtn{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background: rgb(234, 123, 123);
+    border: none;
+	border-radius: 30px;
+	font-size: 15px;
+	outline: none;
+    color: #fff;
+    position: absolute;
+	top: 15px;
+	right: 10px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.isActive{
+    opacity: 1;
+}

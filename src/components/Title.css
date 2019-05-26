@@ -1,0 +1,9 @@
+h2{
+    color: #fff;
+    font-weight: 800;
+    font-size: calc(2em + 1.5vw); 
+	text-align: center;
+}
+.todosNumber{
+    font-weight: 300;
+}
