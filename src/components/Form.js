@@ -74,4 +74,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Form)
+export default connect({}, mapDispatchToProps)(Form)
