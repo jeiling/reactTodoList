@@ -12,13 +12,12 @@ class Form extends Component {
     }
   }
   
-  createTodo() {
-    if (!this.state.text) {
-      this.setState({
-        text: ''
-      })
+  createTodo =()=> {
+    let { text } = this.state
+    if (!text) {
+      return
     }
-    this.props.createTodo(this.state.text)
+    this.props.createTodo(text)
     this.setState({
       text: ''
     })
@@ -34,7 +33,7 @@ class Form extends Component {
     event.keyCode === 13 && this.createTodo()
   }
 
-  handleClick = (event) => {
+  handleClick = () => {
     this.setState({
       active: true
     })
@@ -47,7 +46,8 @@ class Form extends Component {
   }
   
   render() {
-    let isactive = this.state.active
+    let { active, text } = this.state
+    let btnClass = active ? 'addBtn isActive' : 'addBtn'
     return (
       <div className='form'>
         <input
@@ -55,12 +55,12 @@ class Form extends Component {
           onChange={this.handleChange}
           onClick={this.handleClick}
           onKeyDown={this.handleKeyDown}
-          value={this.state.text}
-          onBlur={() => this.onblur()}
+          value={text}
+          onBlur={this.onblur}
           >
         </input>
         <button
-          onClick={this.createTodo} className={isactive? 'addBtn isActive': 'addBtn'}>+</button>
+          onClick={this.createTodo} className={btnClass}>+</button>
       </div>
     )
   }
@@ -74,4 +74,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect({}, mapDispatchToProps)(Form)
+export default connect(null, mapDispatchToProps)(Form)
